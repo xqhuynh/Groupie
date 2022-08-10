@@ -1,0 +1,96 @@
+.featured-container {
+  display: flex;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Left side of featured instructors */
+.view-more-btn {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  background-color: rgba(81, 19, 143, 255);
+  border: 0.5px solid rgba(81, 19, 143, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(222, 224, 230);
+}
+
+.view-more-btn:hover {
+  background-color: rgb(187, 51, 187);
+}
+
+/* Right side of featured instructors */
+.right-card {
+  width: 12rem;
+  height: auto;
+  border: 1px solid rgb(140, 110, 140);
+  box-shadow: 4px 8px 14px -3px #828282;  
+}
+
+.rt-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  padding-bottom: 16px !important;
+}
+
+.icon-container {
+  display: flex;
+  gap: 0.5rem;
+  width: 20px;
+  height: 20px;
+}
+
+.featured-btn {
+  background-color: rgb(118, 117, 120);
+  border: 1px solid rgb(120, 120, 120);
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.featured-btn:hover {
+  background-color: rgb(177, 176, 179);
+}
+
+.featured-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.chip-pill {
+  height: 0.9rem !important;
+  font-size: 0.6rem !important;
+}
+
+.chip-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag-list {
+  list-style-type: none;
+}
+
+.instructor-name {
+  font-weight: 600;
+  font-size: .75rem;
+}
+
+/* about section */
+.about-section {
+  text-align: left;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.about-header {
+  text-align: center;
+}

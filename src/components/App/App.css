@@ -1,0 +1,32 @@
+html,
+body,
+#react-root {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+}
+
+.alert {
+  margin: 2rem 2rem;
+  color: red;
+}
+
+.searchbar {
+  margin: 2rem 2rem;
+}
+
+.Universal-Container {
+  margin: 2rem 2rem;
+}
+
+.search-button {
+  margin-top: 1rem !important;
+}
+
+.instructor-page {
+  margin-bottom: 2rem;
+}
+

@@ -1,0 +1,36 @@
+.favorite-instructors-container {
+    max-height: 19rem;
+    overflow-y: auto;
+}
+
+.favorite-container {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.top-right-card {
+    display: flex;
+    height: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-container {
+    padding-bottom: .5rem;
+    padding-left: 10px;
+}
+
+.delete-icon-btn {
+    color: red;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.favorite-header-text {
+    margin-top: 2rem;
+}

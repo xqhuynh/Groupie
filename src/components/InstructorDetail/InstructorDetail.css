@@ -1,0 +1,141 @@
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: lightgray;
+}
+
+.card {
+  height: 150px;
+  width: 122px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.container {
+  padding: 35px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.containerProfile {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.classOrder {
+  display: flex;
+  overflow: scroll;
+}
+
+.class {
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.ic-card {
+  margin-right: 1rem;
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+}
+
+.favoriteHeart {
+  margin-left: 14rem;
+  margin-top: -4rem;
+  background-color: rgb(236,232,232);
+  color: purple;
+  border: none;
+}
+
+.favorite-border-icon{
+  background-color: rgb(236,232,232);
+}
+.editIcon {
+  margin-left: 327px;
+}
+
+.deleteIcon {
+  margin-left: 93px;
+}
+
+.addIcon {
+  margin-top: 50px;
+}
+.tags {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+.css-10hburv-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  display: block;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.detail-view {
+  margin-top: 2rem;
+  width: 85%;
+  height: 17rem;
+  margin-bottom: 2rem;
+}
+
+.ic-card {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.gym-goer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+  width: 12rem;
+  height: 9rem;
+  border-radius: .5rem;
+  font-size: .85rem;
+  padding: .5rem .5rem 1rem .5rem;
+  background-color: rgba(204, 208, 227, 0.459);
+  box-shadow: 4px 8px 14px -3px #828282;
+  border: 1px solid rgb(162, 154, 162);
+}
+
+.add-instructor-class {
+  text-align: center;
+  margin-top: .5rem;
+}
+
+.add-class-btn {
+  width: 50%;
+  height: 1.5rem;
+  cursor: pointer;
+  background-color: #8b8fc3;
+  color: white;
+  border-radius: 5px;
+  font-size: .9rem;
+  box-shadow: 4px 8px 14px -3px #828282;
+  border: 1px solid rgb(116, 112, 116);
+}
+
+.instructor-details-header {
+  text-align: center;
+}

@@ -1,0 +1,182 @@
+.instructor-view-container {
+    background-color: rgb(236, 232, 232);
+    margin: auto;
+    padding-top: .5rem;
+    border-radius: .5rem;
+    gap: .5;
+    box-shadow: 4px 8px 14px -3px #828282;
+    width: 70%;
+}
+
+.instructor-view {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.avatar-img {
+    justify-content: center;
+}
+
+.social-media-icons {
+    margin-right: .75rem;
+}
+
+.social {
+    color: #880088
+}
+
+.instructor-card-name {
+    font-size: 1.10rem;
+    margin-bottom: .25em;
+    font-weight: 600;
+    margin-top: .75rem;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.pencil-icon {
+    margin-left: 1rem;
+    color: purple;
+    cursor: pointer;
+}
+
+/* Tooltip for pencil icon */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(67, 66, 66);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  /* Class card */
+.instructor-class-container {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    overflow-x: auto;
+  }
+
+  .instructor-card {
+    width: 8.5rem;
+    height: auto;
+    border-radius: .5rem;
+    font-size: .7rem;
+    padding: .5rem;
+    background-color: rgba(204, 208, 227, 0.459);
+    box-shadow: 4px 8px 14px -3px #828282;
+    border: 1px solid rgb(162, 154, 162);
+  }
+
+  .cert {
+    margin-top: 0;
+    margin-bottom: .25rem;
+  }
+
+  .instructor-view-header {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .instructor-view-tagheader {
+    text-align: center;
+  }
+
+.scroll-text {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.about-text {
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: .95rem;
+  }
+
+.class-button {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.edit-class {
+    width: 5rem;
+    background-color: rgb(202, 202, 219);
+    border: 1px solid rgb(75, 55, 92);
+    border-radius: 5px;
+    color: rgb(42, 42, 126);
+
+}
+
+.css-nen11g-MuiStack-root {
+  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.tags-container {
+  background-color: #dcdcf3;
+  padding-top: .5px;
+  padding-bottom: 1.5rem;
+  border-radius: .5rem;
+  width: 85%;
+  margin: auto;
+}
+
+#add-tags-btn {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete-class {
+  width: 5rem;
+  background-color: rgb(221, 203, 221);
+  border: 1px solid rgb(184, 138, 225);
+  border-radius: 5px;
+  color: rgb(42, 42, 126);
+  cursor: pointer;
+}
+
+.photo-button {
+  text-align: center;
+}
+
+.instructor-view-class-header {
+text-align: center;
+}
+
+.instructor-view-about-header {
+  text-align: center;
+  margin-left: 3.5rem;
+}

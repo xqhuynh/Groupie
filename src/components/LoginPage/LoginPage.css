@@ -1,0 +1,76 @@
+.login-page-container {
+  height: 100vh;
+}
+
+.login-form-header {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.login-header {
+  margin-bottom: 5px;
+}
+
+.login-text {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-btn,
+.registrater-btn {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login-btn,
+.register-btn {
+  margin: 2rem;
+  width: 20rem;
+  height: 2.5rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+  background-color: rgb(237, 236, 236);
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-weight: 600;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  background-color: rgb(205, 201, 201);
+}
+
+.not-registered,
+.register-text {
+  text-align: center;
+  margin-left: 1rem;
+}
+
+#username, 
+#password, 
+#name, 
+#pronouns {
+  width: 18rem;
+  height: 0.25rem;
+}
+
+.login-label, .input-label {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.photo-avatar {
+  margin-top: .5rem;
+}
+
+.tags-input {
+  margin-top: 1rem;
+}

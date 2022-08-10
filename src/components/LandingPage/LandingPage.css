@@ -1,0 +1,29 @@
+.landing-header {
+  text-align: center;
+}
+
+.popular-tags {
+  margin-left: 2rem;
+}
+
+.search-tags {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.submit-btn {
+  width: 50%;
+  margin: 1rem 0 1rem 25%;
+  height: 1.75rem;
+  font-size: 1rem;
+}
+
+.featured-instructors {
+  text-align: center;
+}
+
+.about-text {
+  font-size: .9rem;
+  margin-bottom: 3rem;
+  line-height: 1.25rem;
+}
