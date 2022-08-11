@@ -109,3 +109,7 @@ If you would like to name your database something else, you will need to change 
 ## Acknowledgement
 
 We want to thank the Groupie development team, Prime Academy and our client for the opportunity to work on this exciting project. 
+
+## Contact
+
+Please contact me with any questions, comments, or concerns [xqhuynh@gmail.com](xqhuynh@gmail.com).
