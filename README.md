@@ -113,3 +113,5 @@ We want to thank the Groupie development team, Prime Academy and our client for 
 ## Contact
 
 Please contact me with any questions, comments, or concerns [xqhuynh@gmail.com](xqhuynh@gmail.com).
+Connect with me on [LinkedIn](www.linkedin.com/in/savon-huynh).
+
