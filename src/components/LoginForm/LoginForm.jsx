@@ -27,6 +27,7 @@ function LoginForm() {
   }; // end login
 
   return (
+    // Top portion of login form
     <div className="login-container">
       <div className="login-form-header">
         <h2 className="login-header">Welcome to Groupie</h2>
@@ -39,6 +40,7 @@ function LoginForm() {
           </h3>
         )}
 
+        {/* // Username */}
         <div>
           <label htmlFor="username">
             <div className="login-label">Username</div>
@@ -51,6 +53,7 @@ function LoginForm() {
           </label>
         </div>
 
+        {/* Password  */}
         <div>
           <label htmlFor="password">
             <div className="login-label">Password</div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import "./LandingPage.css";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -13,10 +12,10 @@ function LandingPage() {
       <SearchBar />
 
       <h3 className="featured-instructors">Featured Instructors</h3>
+      {/* Bring in InstructorCardList component */}
       <InstructorCardList />
     </>
   );
 }
 
 export default LandingPage;
- 

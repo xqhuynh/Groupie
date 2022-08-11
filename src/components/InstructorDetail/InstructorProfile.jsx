@@ -15,12 +15,12 @@ function InstructorProfile({ profile, instructor }) {
   const user = useSelector((store) => store.user);
   // useState to disable favorite button after clicked
   const [faveDisable, setFaveDisable] = useState(false);
-  const [faveIcon, setFaveIcon] = useState(<FavoriteBorderIcon className='favorite-border-icon' />);
-  
-
+  const [faveIcon, setFaveIcon] = useState(
+    <FavoriteBorderIcon className="favorite-border-icon" />
+  );
 
   // Disable favorite 'heart' icon after user clicks it
-  // Gym goer only allowed to favorite instructor one time
+  // Change heart icon from outlined to fill after user click
   const faveClickHandler = () => {
     dispatch({
       type: "ADD_INSTRUCTOR_TO_FAVORITES",
@@ -30,20 +30,18 @@ function InstructorProfile({ profile, instructor }) {
     setFaveIcon(<FavoriteIcon />);
     const Toast = swal.mixin({
       toast: true,
-      position:'top',
+      position: "top",
       timer: 3000,
       timerProgressBar: true,
-    })
+    });
     Toast.fire({
-      icon:'success',
-      title: 'Added to favorites'
-    })
-
+      icon: "success",
+      title: "Added to favorites",
+    });
   };
 
   return (
     <>
-
       <div className="instructor-view-container detail-view">
         <div className="instructor-view">
           <div className="profile-card">
@@ -80,6 +78,7 @@ function InstructorProfile({ profile, instructor }) {
             <p className="cert">ACE Certification</p>
           </div>
 
+          {/* Conditional render heart icon. Only visible if user is a gymgoer */}
           {user.id && user.adminLevel === "gym-goer" ? (
             <div>
               <button

@@ -3,9 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import AddIcon from "@mui/icons-material/Add";
 import AddInstructorTag from "../AddInstructorTag/AddInstructorTag";
-
 
 function InstructorTags({ tags }) {
   const params = useParams();
@@ -23,7 +21,6 @@ function InstructorTags({ tags }) {
       type: "DELETE_TAG",
       payload: id,
     });
-
     setDeleteChip(true);
   }
 

@@ -15,18 +15,20 @@ function InstructorDetail() {
   const params = useParams();
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // Fetch instructor profile on page load
   useEffect(() => {
     dispatch({ type: "FETCH_INSTRUCTOR_PROFILE", payload: params.id });
-    //
+    // Fetch instructor classes on page load
     dispatch({
       type: "FETCH_INSTRUCTOR_CLASSES",
       payload: params.id,
     });
-    //
+    // Fetch instructor tags on page load
     dispatch({ type: "FETCH_INSTRUCTOR_TAGS", payload: params.id });
     //
   }, [params.id]);
 
+  // Redux store
   const profile = useSelector((store) => store.instructorProfile);
   const classes = useSelector((store) => store.instructorClasses);
   const tags = useSelector((store) => store.instructorTags);
@@ -53,7 +55,7 @@ function InstructorDetail() {
         <h3 className="instructor-view-header"> Classes </h3>
 
         <div className="ic-card">
-          {/* conditional render add icon */}
+          {/* conditional render add icon if adminLevel is instructor */}
           {user.adminLevel === "instructor" && user.id === Number(params.id) ? (
             <div>
               <AddIcon />
@@ -61,6 +63,8 @@ function InstructorDetail() {
           ) : (
             <></>
           )}
+
+          {/* Map over instructor classes and pass prop to InstructorClass component */}
           {classes &&
             classes.map((session, i) => (
               <InstructorClass key={i} session={session} />

@@ -51,25 +51,19 @@ swal.fire({
 });
 
 };
- 
 
-  const [isDeletePress, setDeletePress] = useState(false)
-  
-  
-  //when delete is press dispatch "FETCH_INSTRUCTOR_CLASSES"
-  useEffect(()=>{
+  const [isDeletePress, setDeletePress] = useState(false);
 
-    if(isDeletePress === true){
+  // When delete is press dispatch "FETCH_INSTRUCTOR_CLASSES"
+  useEffect(() => {
+    if (isDeletePress === true) {
       dispatch({
-        type:"FETCH_INSTRUCTOR_CLASSES",
-        payload: user.id
-      })
-      setDeletePress(false)
+        type: "FETCH_INSTRUCTOR_CLASSES",
+        payload: user.id,
+      });
+      setDeletePress(false);
     }
-  },[isDeletePress])
-
-  
-
+  }, [isDeletePress]);
 
   return (
     <div className="instructor-card">

@@ -24,6 +24,8 @@ export default function RecommendCard({ instructor }) {
           <p>{instructor.count} Matching Tags</p>
         </div>
       </div>
+
+      {/* View More button will take user to instructor details page */}
       <button
         className="view-more"
         onClick={() => {

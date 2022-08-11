@@ -10,6 +10,7 @@ function LoginPage() {
     <div className="login-page-container">
       <LoginForm />
 
+      {/* User taken to register page when they click 'Register' */}
       <center>
         <button
           type="button"

@@ -7,7 +7,6 @@ import React, { useEffect, useState } from "react";
 import "../InstructorPage/InstructorPage.css";
 
 function InstructorAbout({ user }) {
-  const params = useParams();
   const dispatch = useDispatch();
 
   const updateAbout = () => {

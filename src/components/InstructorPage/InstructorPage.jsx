@@ -14,21 +14,20 @@ import InstructorClassItem from "./InstructorClassItem";
 import AddClass from "../AddClass/AddClass";
 
 function InstructorPage() {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  // Redux store
   const user = useSelector((store) => store.user);
   const instructorClasses = useSelector((store) => store.instructorClasses);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     dispatch({
-      type:"FETCH_INSTRUCTOR_CLASSES",
-      payload: user.id
-    })
-  },[])
-
+      type: "FETCH_INSTRUCTOR_CLASSES",
+      payload: user.id,
+    });
+  }, []);
 
   // Edit function for instructor profile
+  // Add placeholder for each field in input tags
   const editProfile = () => {
     swal
       .fire({
@@ -125,7 +124,7 @@ function InstructorPage() {
       <AddClass />
 
       <div className="instructor-class-container">
-        {/* Map over instructor classes */}
+        {/* Map over instructor classes and pass prop to InstructoClassItem component */}
         {instructorClasses.map((instructorClass, i) => {
           return (
             <InstructorClassItem key={i} instructorClass={instructorClass} />

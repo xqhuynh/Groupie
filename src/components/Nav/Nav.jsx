@@ -1,27 +1,25 @@
 import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
-import LogOutButton from "../LogOutButton/LogOutButton";
 import "./Nav.css";
 import { useSelector, useDispatch } from "react-redux";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import Groupie from "./Groupie.png";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 //import appConfig from "../app.config";
-import {withRouter} from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 
-ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_CODE)
+ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_CODE);
 
 function Nav() {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-  },[])
+  }, []);
 
   return (
     <>
@@ -60,14 +58,18 @@ function Nav() {
             {(popupState) => (
               <React.Fragment>
                 <MenuIcon className="menu-bar" {...bindTrigger(popupState)} />
+
+                {/* Home link will take user to landing page */}
                 <Menu {...bindMenu(popupState)}>
                   <Link className="nav-link" to="/home">
                     <MenuItem onClick={popupState.close}>Home</MenuItem>
                   </Link>
 
+                  {/* Click my profile will take user to respective user profile */}
                   <Link className="nav-link" to="/user">
                     <MenuItem onClick={popupState.close}>My Profile</MenuItem>
                   </Link>
+
                   {/* Clicking Log Out will log user out and show Log In view */}
                   <Link className="nav-link" to="/user">
                     <MenuItem onClick={() => dispatch({ type: "LOGOUT" })}>

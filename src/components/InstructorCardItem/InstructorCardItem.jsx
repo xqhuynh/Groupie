@@ -30,6 +30,7 @@ function InstructorCardItem({ item }) {
               sx={{ width: 75, height: 75 }}
             />
           </Stack>
+          {/* View More button will take user to instructor details page */}
           <button
             onClick={() => {
               history.push(`/instructor/${item.id}`);
@@ -52,7 +53,7 @@ function InstructorCardItem({ item }) {
                 {item.name}
               </Typography>
 
-              {/* Limit tags to 2 per instructor */}
+              {/* Limit tags to 2 per instructor using slice method */}
               <Stack>
                 <span className="chip-container">
                   {/* Map over instructor tags and limit tags to 2 */}

@@ -17,7 +17,6 @@ function SearchItem({ result }) {
 
   return (
     <>
-      {/* <hr></hr> */}
       <br />
       <div className="search-featured-container">
         {/* Left side */}
@@ -29,6 +28,8 @@ function SearchItem({ result }) {
               sx={{ width: 75, height: 75 }}
             />
           </Stack>
+
+          {/* View More to take user to instructor details page */}
           <button
             onClick={() => {
               history.push(`/instructor/${result.id}`);

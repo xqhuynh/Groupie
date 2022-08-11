@@ -1,17 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import ClearIcon from "@mui/icons-material/Clear";
-import AddIcon from "@mui/icons-material/Add";
 import "../InstructorDetail/InstructorDetail.css";
-import { useParams, useHistory } from "react-router-dom";
 import swal from "sweetalert2";
+import { useHistory } from "react-router-dom";
+
 export default function InstructorClass({ session }) {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const instructorProfile = useSelector((store) => store.instructorProfile);
   const history = useHistory();
-
-  console.log("user website is", instructorProfile.website);
 
   // Handle save class click to direct user to login/register view
   // if user is not logged in, otherwise dispatch "attend class"
@@ -27,6 +23,7 @@ export default function InstructorClass({ session }) {
         },
       });
 
+      // Toast notification after saving class
       const Toast = swal.mixin({
         toast: true,
         position: "bottom",
@@ -51,7 +48,7 @@ export default function InstructorClass({ session }) {
 
           <div>
             <strong>Day: </strong>
-            {session.dateOfWeek.join(", ")}
+            {session.dateOfWeek}
           </div>
           <div>
             <strong>Location: </strong>
@@ -63,6 +60,7 @@ export default function InstructorClass({ session }) {
           </div>
         </div>
 
+        {/* if user's adminLevel is not an instructor, show the Save Class and Sign Up buttons */}
         {user.adminLevel != "instructor" ? (
           <div className="add-instructor-class">
             <button className="add-class-btn" onClick={addClassHandle}>
@@ -79,4 +77,3 @@ export default function InstructorClass({ session }) {
     </>
   );
 }
-
