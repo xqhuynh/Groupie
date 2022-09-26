@@ -292,21 +292,21 @@ router.put('/update/:id', rejectUnauthenticated, (req, res) => {
       WHERE id = $2
     RETURNING "user".about;
     `;
-  
+
   const sqlParams = [
     req.body.result,
     req.params.id
   ];
 
-// console.log('I am updating', sqlParams)
+  // console.log('I am updating', sqlParams)
   pool.query(sqlText, sqlParams)
-  .then(() => {
-    res.sendStatus(200)
-  })
-  .catch((err) => {
-    console.error(`Failed to update in Instructor Server Rotue ${err}`)
-    res.sendStatus(500)
-  })
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((err) => {
+      console.error(`Failed to update in Instructor Server Rotue ${err}`)
+      res.sendStatus(500)
+    })
 })
 
 //Update instructor Profile
@@ -328,13 +328,13 @@ router.put('/updateProfile/:id', rejectUnauthenticated, (req, res) => {
   ]
   console.log('In updateProfile Route:', sqlParams);
   pool.query(sqlText, sqlParams)
-  .then(() => {
-    res.sendStatus(200)
-  })
-  .catch((error) => {
-    console.error(`Failed to update instructor profile ${error}`)
-    res.sendStatus(500)
-  })
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((error) => {
+      console.error(`Failed to update instructor profile ${error}`)
+      res.sendStatus(500)
+    })
 })
 
 // Update instructor classes
@@ -344,7 +344,7 @@ router.put('/updateClass/:id', (req, res) => {
 	SET  "activityId" = $1, "location"= $2, "dateOfWeek" = $3, "startTime"= $4
 	WHERE id = $5;
   `;
- const  sqlParams = [
+  const sqlParams = [
     req.body.activity,
     req.body.location,
     req.body.dateOfWeek,
@@ -353,13 +353,13 @@ router.put('/updateClass/:id', (req, res) => {
   ];
 
   pool.query(sqlText, sqlParams)
-  .then(() => {
-    res.sendStatus(200)
-  })
-  .catch((error) => {
-    console.error(`Failed to update classes in server Route ${error}`)
-    res.sendStatus(500)
-  })
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((error) => {
+      console.error(`Failed to update classes in server Route ${error}`)
+      res.sendStatus(500)
+    })
 })
 
 // POST to add favorite instructor to db
@@ -408,9 +408,9 @@ router.post("/newClass", rejectUnauthenticated, (req, res) => {
     });
 });
 
-router.delete('/class/:id',rejectUnauthenticated,(req,res)=>{
+router.delete('/class/:id', rejectUnauthenticated, (req, res) => {
   console.log('in router', req.params.id);
-  
+
   const deleteClassQuery = `
     DELETE FROM "availableClass"
     WHERE "availableClass".id = $1
@@ -419,11 +419,11 @@ router.delete('/class/:id',rejectUnauthenticated,(req,res)=>{
 
   pool.query(deleteClassQuery, [req.params.id])
     .then((dbRes) => {
-      
-        //console.log(`${dbRes.rows[0].instructorId}`);
-        res.sendStatus(200)
-      
-    }).catch((error)=>{
+
+      //console.log(`${dbRes.rows[0].instructorId}`);
+      res.sendStatus(200)
+
+    }).catch((error) => {
       console.error(`Error in line 400: ${error}`);
       res.sendStatus(500)
     })

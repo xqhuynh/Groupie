@@ -30,7 +30,7 @@ router.get("/activities", (req, res) => {
     });
 });
 
-//search results based of tags -Alex
+//search results based of tags 
 router.post("/", (req, res) => {
   const tags = req.body.searchTags;
 
@@ -52,7 +52,6 @@ router.post("/", (req, res) => {
   };
 
   const sqlQuery = `
-
   SELECT "user".id, "user".username, JSON_AGG("tags"."tagName") as tags, "user".name, "user".avatar, "user"."adminLevel", "user".facebook, "user".instagram, "user".twitter, "user".website, 
 	(SELECT JSON_AGG(row_to_json("availableClass")) 
       FROM "availableClass" 
@@ -66,8 +65,9 @@ router.post("/", (req, res) => {
 	    HAVING count(*) >= 1
 	    ORDER BY count(tags) DESC;
     `;
+
   const sqlParams = sqlParamsInsert(tags);
-  console.log(sqlParams);
+  // console.log(sqlParams);
   pool
     .query(sqlQuery, sqlParams)
     .then((dbRes) => {

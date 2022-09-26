@@ -89,7 +89,7 @@ router.post("/logout", (req, res) => {
   res.sendStatus(200);
 });
 
-router.get('/upcomingClass',rejectUnauthenticated,(req,res)=>{
+router.get('/upcomingClass', rejectUnauthenticated, (req, res) => {
   //console.log('in upcoming', req.user.id);
 
   const upcomingClass = `
@@ -100,26 +100,26 @@ router.get('/upcomingClass',rejectUnauthenticated,(req,res)=>{
   `
 
   pool.query(upcomingClass, [req.user.id])
-    .then((dbRes)=>{
+    .then((dbRes) => {
       res.send(dbRes.rows)
-    }).catch((error)=>{
+    }).catch((error) => {
       console.error(`Error in upcomming router: ${error}`);
       res.sendStatus(500)
     })
 
 })
 
-router.delete('/upcomingClass/:id',rejectUnauthenticated,(req,res)=>{
+router.delete('/upcomingClass/:id', rejectUnauthenticated, (req, res) => {
   const deleteClassQuery = `
     DELETE FROM "userClass"
     WHERE "userClass".id = $1;
   `
-  
 
-  pool.query(deleteClassQuery,[req.params.id])
-    .then(()=>{
-       res.sendStatus(200)
-    }).catch((error)=>{
+
+  pool.query(deleteClassQuery, [req.params.id])
+    .then(() => {
+      res.sendStatus(200)
+    }).catch((error) => {
       console.error(`Error ${error}`);
       res.sendStatus(500)
     })
