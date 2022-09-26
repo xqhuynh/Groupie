@@ -1,22 +1,23 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button'
-import axios from 'axios'
+import Button from '@mui/material/Button';
+import axios from 'axios';
 import "../InstructorPage/InstructorPage.css";
 
 const PhotoUpload = ({userPhoto, userId}) => {
     const dispatch = useDispatch()
-    const [profilePhoto, setProfilePhoto] = useState(userPhoto)
-    const [photoChange, setPhotoChange] = useState(false)
-    const [file, setFile] = useState(null)
+    // useState for setting photo, changing photo
+    const [profilePhoto, setProfilePhoto] = useState(userPhoto);
+    const [photoChange, setPhotoChange] = useState(false);
+    const [file, setFile] = useState(null);
     const handleChange = (evt) => {
-        setProfilePhoto(URL.createObjectURL(evt.target.files[0]))
-        setFile(evt.target.files[0])
-        setPhotoChange(true)
+        setProfilePhoto(URL.createObjectURL(evt.target.files[0]));
+        setFile(evt.target.files[0]);
+        setPhotoChange(true);
     }
 
     const Input = styled('input')({
@@ -24,12 +25,12 @@ const PhotoUpload = ({userPhoto, userId}) => {
       });
     
     const handleSubmit = async (evt) => {
-      evt.preventDefault()
-      setPhotoChange(false)
-      const formData = new FormData()
-      formData.append("image", file)
-      const result = await axios.post('/upload', formData)
-      console.log(result.data.Location)
+      evt.preventDefault();
+      setPhotoChange(false);
+      const formData = new FormData();
+      formData.append("image", file);
+      const result = await axios.post('/upload', formData);
+      // console.log(result.data.Location);
       dispatch({
         type: "UPDATE_PHOTO",
         payload: {
@@ -37,11 +38,12 @@ const PhotoUpload = ({userPhoto, userId}) => {
           avatar: result.data.Location
         }
       })
-    }
+    };
 
     return (
       <div className="photo-button">
         <form action="" onSubmit={handleSubmit}>
+          {/* Avatar photo size */}
           <Avatar
             alt="Profile Photo"
             src={profilePhoto}
@@ -54,11 +56,14 @@ const PhotoUpload = ({userPhoto, userId}) => {
               type="file"
               onChange={handleChange}
             />
+
             <IconButton
               sx={{ color: "#880088" }}
               aria-label="upload picture"
               component="span"
             >
+
+            {/* Camera icon button and submit */}
               <PhotoCamera />
             </IconButton>
             {photoChange && <Button type="submit">Submit</Button>}
@@ -68,4 +73,4 @@ const PhotoUpload = ({userPhoto, userId}) => {
     );
 }
 
-export default PhotoUpload
+export default PhotoUpload;

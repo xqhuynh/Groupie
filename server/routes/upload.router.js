@@ -7,6 +7,8 @@ const { s3Uploadv2 } = require("../modules/s3Service");
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
+
+// Post route 
 router.post("/", upload.array("image"), async (req, res) => {
   const file = req.files[0];
   const result = await s3Uploadv2(file);
