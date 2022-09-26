@@ -37,7 +37,6 @@ const PhotoUpload = ({userPhoto, userId}) => {
           avatar: result.data.Location
         }
       })
-      
     }
 
     return (

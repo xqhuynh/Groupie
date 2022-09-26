@@ -4,7 +4,7 @@ import mapStyles from "./mapStyles";
 import "./Map.css";
 import { v4 as uuidv4 } from 'uuid';
 
-
+// Maps styling
 const containerStyle = {
   width: "325px",
   height: "325px",
@@ -32,7 +32,6 @@ const Map = ({instructors}) => {
   return newMarkers
 }
   
-
     const [markers, setMarkers] = useState([])
     const [currentLocation, setCurrentLocation] = useState({
         lat: 39.0997,
@@ -80,7 +79,6 @@ const Map = ({instructors}) => {
           />
       )
       })}
-      
       
       </GoogleMap>
     </>
