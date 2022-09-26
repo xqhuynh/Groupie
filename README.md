@@ -11,7 +11,7 @@ Users do not need to be logged in to search for instructors. Gym goers will need
 
 This app is best viewed on a mobile device.
 
-To see the fully functional site, please visit [Groupie](https://dry-crag-81755.herokuapp.com/#/home).
+To see the fully functional site, please visit [Groupie](https://morning-woodland-01521.herokuapp.com/#/home).
 
 ## Screen Shot
 
