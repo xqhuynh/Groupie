@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
     return queryInsert.join();
   };
   let queryValues = sqlQueryInsert(tags);
-  console.log(queryValues);
+  // console.log(queryValues);
   const sqlParamsInsert = (tags) => {
     let paramsInsert = [];
     for (let i = 0; i < tags.length; i++) {
