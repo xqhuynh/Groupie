@@ -9,12 +9,13 @@ const userReducer = (state = {}, action) => {
   }
 };
 
-export const userClass = (state = [], action )=>{
+// Reducer for upcoming classes for gym goers profile view
+export const userClass = (state = [], action) => {
   switch (action.type) {
     case 'SET_UPCOMING_CLASSES':
-      
+
       return action.payload;
-  
+
     default:
       return state;
   }

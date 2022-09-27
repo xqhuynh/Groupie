@@ -1,8 +1,8 @@
 import axios from "axios";
 import { put, takeEvery } from "redux-saga/effects";
 
+// Get all instructors
 function* fetchAllInstructors() {
-  // Get all instructors
   // console.log("In fetchAllInstructors saga");
   try {
     const res = yield axios.get("/instructor");
@@ -16,6 +16,7 @@ function* fetchAllInstructors() {
   }
 }
 
+// Get instructor profile
 function* fetchInstructorProfile(action) {
   // console.log("id", action.payload);
   try {
@@ -27,8 +28,8 @@ function* fetchInstructorProfile(action) {
   }
 }
 
+// Get instructor classes
 function* fetchInstructorClasses(action) {
-  
   try {
     const res = yield axios.get("/instructor/class/" + action.payload);
     //console.log('fetchInstructorClasses saga', res.data);
@@ -38,6 +39,7 @@ function* fetchInstructorClasses(action) {
   }
 }
 
+// Get instructor tags
 function* fetchInstructorTags(action) {
   try {
     const res = yield axios.get("/instructor/tags/" + action.payload);
@@ -47,6 +49,7 @@ function* fetchInstructorTags(action) {
   }
 }
 
+// Get recommended instructors
 function* fetchRecommendInstructor() {
   // console.log("in recommend");
   try {
@@ -60,6 +63,7 @@ function* fetchRecommendInstructor() {
   }
 }
 
+// Get favorite instructors
 function* fetchFavoriteInstructor() {
   try {
     const res = yield axios.get("/instructor/favorite");
@@ -71,6 +75,7 @@ function* fetchFavoriteInstructor() {
   }
 }
 
+// Add instructors to favorites
 function* addInstructorToFavorite(action) {
   // console.log('addInstructorToFavorite saga', action.payload);
   try {
@@ -80,6 +85,7 @@ function* addInstructorToFavorite(action) {
   }
 }
 
+// Add instructor tag
 function* addTag(action) {
   try {
     yield axios.post("/instructor/addTag/" + action.payload);
@@ -110,6 +116,7 @@ function* deleteFavoriteInstructor(action) {
   }
 }
 
+// Delete instructor tags
 function* deleteTag(action) {
   // console.log("in deleteTag saga", action.payload);
   try {
@@ -119,50 +126,53 @@ function* deleteTag(action) {
   }
 }
 
+// Add new instructor class
 function* addNewClass(action) {
-  
   try {
     yield axios.post("/instructor/newClass", action.payload);
-    yield put({ type: "FETCH_INSTRUCTOR_CLASSES" , payload: action.payload.instructorId })
+    yield put({ type: "FETCH_INSTRUCTOR_CLASSES", payload: action.payload.instructorId })
 
   } catch (err) {
     console.log("Error in addNewClass", err);
   }
 }
-function* updateAbout(action){
-    // console.log('in updateAbout saga did it make it over?', action.payload)
-    try{
-        yield axios.put(`/instructor/update/${action.payload.id}`, action.payload)
-        yield put({
-            type: 'FETCH_USER'
-        })
-    } catch(error) {
-        console.error(`Failed to update About in saga ${error}`)
-    }
-}
-function* updateProfile(action){
-// console.log('In updateProfile saga did it make it over', action.payload);
-try{
-  yield axios.put(`/instructor/updateProfile/${action.payload.id}`, action.payload)
-  yield put({
-    type: 'FETCH_USER'
-  })
-} catch(error) {
-  console.error(`Failed to update in UpdateProfile Saga ${error}`)
-}
+
+// Update about section on instructor profile
+function* updateAbout(action) {
+  // console.log('in updateAbout saga did it make it over?', action.payload)
+  try {
+    yield axios.put(`/instructor/update/${action.payload.id}`, action.payload)
+    yield put({
+      type: 'FETCH_USER'
+    })
+  } catch (error) {
+    console.error(`Failed to update About in saga ${error}`)
+  }
 }
 
+// Update instructor profile
+function* updateProfile(action) {
+  // console.log('In updateProfile saga did it make it over', action.payload);
+  try {
+    yield axios.put(`/instructor/updateProfile/${action.payload.id}`, action.payload)
+    yield put({
+      type: 'FETCH_USER'
+    })
+  } catch (error) {
+    console.error(`Failed to update in UpdateProfile Saga ${error}`)
+  }
+}
+
+// Delete instructor class
 function* deleteAvailableClass(action) {
   try {
-
-   yield axios.delete('/instructor/class/'+ action.payload)
-   
-    
+    yield axios.delete('/instructor/class/' + action.payload)
   } catch (error) {
     console.error(`Error in deleteAvailableClass: ${error}`);
   }
 }
 
+// Update instructor photo
 function* updatePhoto(action) {
   try {
     yield axios.put("/instructor/photo/" + action.payload.id, action.payload);
@@ -171,6 +181,7 @@ function* updatePhoto(action) {
   }
 }
 
+// Add classes for gym goers
 function* attendClass(action) {
   console.log('In attendClass saga action.payload is:', action.payload);
   try {
@@ -181,6 +192,7 @@ function* attendClass(action) {
   }
 }
 
+// Get upcoming classes for gym goers
 function* fetchUpcomingClasses(action) {
   // console.log('in fetchUpcomingClasses saga', action.paylaod);
   try {
@@ -191,13 +203,14 @@ function* fetchUpcomingClasses(action) {
   }
 }
 
-function* updateClass(action){
+// Update classes for instructors
+function* updateClass(action) {
   console.log('Inside update class', action.payload)
   try {
-     yield axios.put(`/instructor/updateClass/${action.payload.id}`, action.payload)
-     yield put({ type: "FETCH_INSTRUCTOR_CLASSES" })
+    yield axios.put(`/instructor/updateClass/${action.payload.id}`, action.payload)
+    yield put({ type: "FETCH_INSTRUCTOR_CLASSES" })
   }
-  catch(err){
+  catch (err) {
     console.error(`Failed to update class in saga ${err}`)
   }
 }

@@ -25,7 +25,6 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   search, // contains tags, results, and activities
   instructor, // contains all user info
-  // instructorDetail, // contains all instructor detail information
   recommendInstructor, // list of recommend instructor base on gym goer's tag
   favoriteInstructor, // get list of gym goer's favorite instructors
   instructorProfile, // get instructor's info

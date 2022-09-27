@@ -192,9 +192,9 @@ router.get("/recommend", (req, res) => {
   // console.log(userId);
 
   const tagQuery = `
-        SELECT JSON_AGG("tags"."tagName") AS "tags" FROM "userTags"
-        JOIN "tags" on "tags".id = "userTags"."tagId" 
-        WHERE "userTags"."userId" = $1;
+      SELECT JSON_AGG("tags"."tagName") AS "tags" FROM "userTags"
+      JOIN "tags" on "tags".id = "userTags"."tagId" 
+      WHERE "userTags"."userId" = $1;
     `;
 
   pool
@@ -286,8 +286,8 @@ router.delete("/favorite/:id", rejectUnauthenticated, (req, res) => {
 router.put('/update/:id', rejectUnauthenticated, (req, res) => {
   const sqlText = `
     UPDATE "user"
-      SET about = $1
-      WHERE id = $2
+    SET about = $1
+    WHERE id = $2
     RETURNING "user".about;
     `;
 
@@ -307,7 +307,7 @@ router.put('/update/:id', rejectUnauthenticated, (req, res) => {
     })
 })
 
-//Update instructor Profile
+// Update instructor Profile
 router.put('/updateProfile/:id', rejectUnauthenticated, (req, res) => {
   const sqlText = `
     UPDATE "user"

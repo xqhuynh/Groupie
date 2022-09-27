@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 
+// Reducer to set tags
 const tags = (state = [], action) => {
   switch (action.type) {
     case "SET_TAGS":
@@ -9,6 +10,7 @@ const tags = (state = [], action) => {
   }
 };
 
+// Reducer to set activities
 const activities = (state = [], action) => {
   switch (action.type) {
     case "SET_ACTIVITIES":
@@ -18,6 +20,7 @@ const activities = (state = [], action) => {
   }
 };
 
+// Reducer for search results
 const results = (state = [], action) => {
   switch (action.type) {
     case "SET_SEARCH_RESULTS":
